@@ -1,0 +1,28 @@
+gcc -o quest1 quest1.c -Wall
+
+deitschs@csc4252021:~/csc425/csc425_assignments$ gcc -o quest1 quest1.c -Wall
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+int main(){
+int x = 100;
+printf("hello world (pid:%d)\n", (int) getpid());
+fork();
+printf("hello I am child (pid:%d)\n", (int) getpid());
+return 0;
+}
+
+deitschs@csc4252021:~/csc425/csc425_assignments$ gcc -o quest1 quest1.c -Wall
+deitschs@csc4252021:~/csc425/csc425_assignments$ ./quest1
+
+/*****
+Name: Sierra Deitsch
+Question 1: The child starts at fork, not main. So it does not have a value.
+When both the parent and the child change the value of x, it creates two different versions of x
+Question 2: Maybe? Maybe only the parent can access it since the child was created afterwards. But maybe if the file is opened it stays opened to both of them? When they are working at the same time they must be taking turns on the CPU
+Question 3: If you don't call wait, the child might finish first anyway. It depends on the CPU scheduler because it decides which process goes first
+
+*****/

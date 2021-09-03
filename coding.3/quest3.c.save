@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+
+int main(){
+fork();
+wait();
+printf("hello I am child (pid:%d)\n", (int) getpid());
+printf("goodbye")
+return 0;
+}
+
+/*
+Sierra Deitsch
+Question 3: I think it depends on the CPU scheduler 
+*/
+
