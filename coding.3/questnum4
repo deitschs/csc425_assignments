@@ -1,0 +1,20 @@
+  GNU nano 4.8                                                    quest4.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+
+int main(){
+printf("hello world (pid:%d)\n", (int) getpid());
+fork();
+printf("hello I am child (pid:%d)\n", (int) getpid());
+execle("bin/ls");
+return 0;
+}
+
+/*
+Sierra Deitsch
+Question 4: There are so many variants because some are more specific to what we want to accomplish in certain situations while others are more general. It's important to have multiple ways of accomplishing certain things. 
+*/
