@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 
 int main(){
-open(filename?);
+open("filename");
 printf("hello world (pid:%d)\n", (int) getpid());
 fork();
 printf("hello I am child (pid:%d)\n", (int) getpid());
@@ -15,5 +15,5 @@ return 0;
 
 /*
 Sierra Deitsch
-Question 2:Maybe? I think only the parent can access it since the child was created afterwards. But maybe if the file is opened it stays opened to both of them? When they are working at the same time they must be taking turns on the CPU
+Question 2: Yes, the child has access to whatever the child has access to. When they are working at the same time they must be taking turns on the CPU
 */
