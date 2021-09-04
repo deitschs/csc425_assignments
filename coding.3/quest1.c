@@ -15,6 +15,6 @@ return 0;
 
 /*
 Sierra Deitsch
-Question 1: The child starts at fork, not main. So it does not have a value.
+Question 1: The child would be 100 because it has the same value of the parent
 When both the parent and the child change the value of x, it creates two different versions of x
 */
